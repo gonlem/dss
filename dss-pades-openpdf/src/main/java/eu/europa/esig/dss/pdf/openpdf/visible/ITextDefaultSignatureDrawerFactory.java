@@ -23,6 +23,7 @@ package eu.europa.esig.dss.pdf.openpdf.visible;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.pades.SignatureImageParameters;
 import eu.europa.esig.dss.pades.SignatureImageTextParameters;
+import eu.europa.esig.dss.pdf.openpdf.visible.defaultdrawer.DefaultITextVisibleSignatureDrawer;
 
 /**
  * Default implementation for IText (OpenPDF) to load a relevant visual signature drawer
@@ -50,7 +51,8 @@ public class ITextDefaultSignatureDrawerFactory implements ITextSignatureDrawerF
 		} else {
 			// Custom drawer(s) can be injected with a new Factory and a custom instance of
 			// IPdfObjFactory
-			throw new UnsupportedOperationException("Image with Text visual signature is not supported for OpenPDF module!");
+			// throw new UnsupportedOperationException("Image with Text visual signature is not supported for OpenPDF module!");
+			return new DefaultITextVisibleSignatureDrawer();
 		}
 	}
 
